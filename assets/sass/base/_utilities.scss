@@ -1,0 +1,58 @@
+.rounded {
+  border-radius: 1rem !important;
+}
+
+.main_title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3.6rem;
+  &-header {
+    font-size: 1.625rem;
+    color: $color-text-dark;
+  }
+  &-sub {
+    color: $color-text-light;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+.sub-logo {
+  border: 1px solid $color-gray-light;
+
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 1.5rem;
+  height: 1.5rem;
+  img {
+    width: 1.2rem;
+    object-fit: cover;
+  }
+}
+
+.record-img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.btn-camp {
+  margin-top: 3.75rem;
+  box-shadow: $shadow;
+  &:hover {
+    box-shadow: $shadow-xl;
+  }
+}
+.btn-red {
+  background-color: $color-primary;
+  border-color: $color-primary;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $color-primary-dark !important;
+    border-color: $color-primary-dark !important;
+    outline: none;
+  }
+}

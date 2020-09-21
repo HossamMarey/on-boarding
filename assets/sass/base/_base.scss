@@ -1,0 +1,83 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 100%;
+  //1 rem = 16px;
+}
+
+body {
+  box-sizing: border-box;
+  width: 100vw;
+  overflow-x: hidden;
+
+}
+
+body.noscroll{
+  position:fixed;
+  overflow:hidden;
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+
+a:hover {
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: $color-primary;
+  @include element-state() {
+    color: $color-primary-dark;
+  }
+}
+p a {
+  @include underline-opening;
+}
+
+blockquote,
+body,
+dd,
+dl,
+fieldset,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+legend,
+ol,
+p,
+pre,
+ul {
+  margin: 0;
+  padding: 0;
+}
+li > ol,
+li > ul {
+  margin-bottom: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

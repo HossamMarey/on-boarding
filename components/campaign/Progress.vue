@@ -1,0 +1,76 @@
+<template>
+  <section
+    class="progress"
+    id="progress"
+    :style="{ width: progressWidth + 'px' }"
+  >
+    <ul class="progress_steps">
+      <li :class="stepClasses(1)">
+        <span class="step-title"> smoe title </span>
+        <span class="step-icon">
+          <img src="../../assets/images/icons/check.svg" alt="" />
+        </span>
+      </li>
+
+      <li :class="stepClasses(2)">
+        <span class="step-title"> smoe title </span>
+        <span class="step-icon">
+          <img src="../../assets/images/icons/check.svg" alt="" />
+        </span>
+      </li>
+
+      <li :class="stepClasses(3)">
+        <span class="step-title"> smoe title </span>
+        <span class="step-icon">
+          <img src="../../assets/images/icons/check.svg" alt="" />
+        </span>
+      </li>
+      <li :class="stepClasses(4)">
+        <span class="step-title"> smoe title </span>
+        <span class="step-icon">
+          <img src="../../assets/images/icons/check.svg" alt="" />
+        </span>
+      </li>
+      <li :class="stepClasses(5)">
+        <span class="step-title"> smoe title </span>
+        <span class="step-icon">
+          <img src="../../assets/images/icons/check.svg" alt="" />
+        </span>
+      </li>
+    </ul>
+  </section>
+</template>
+
+<script>
+import { mapGetters } from "vuex";
+export default {
+  name: "Progress",
+  screenWidth: 0,
+  data() {
+    return {};
+  },
+  methods: {
+    ...mapGetters({
+      getScreenWidth: "campaign/getScreenWidth",
+      getactiveCamp: "campaign/getactiveCamp"
+    }),
+    stepClasses(num) {
+      if (this.activeCamp >= num) {
+        return "progress_steps-item active";
+      } else {
+        return "progress_steps-item";
+      }
+    }
+  },
+  mounted() {},
+  computed: {
+    progressWidth() {
+      let screenWidth = this.getScreenWidth();
+      return (screenWidth - 730) / 2;
+    },
+    activeCamp() {
+      return this.getactiveCamp() || 1;
+    }
+  }
+};
+</script>
