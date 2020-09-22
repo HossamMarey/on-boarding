@@ -33,7 +33,7 @@ export default {
     }
   },
   created() {
-    console.log(this.$store.state.campaign.activeCamp);
+    // console.log(this.$store.state.campaign.activeCamp);
   },
   components: {
     CampaignDetails,

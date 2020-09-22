@@ -1,5 +1,5 @@
 <template>
-  <section class="campaigns_sec">
+  <section class="campaigns_sec campaign-details">
     <b-row>
       <b-col cols="12">
         <div class="main_title">
@@ -9,45 +9,93 @@
           </p>
         </div>
       </b-col>
-      <b-col cols="6">
-        <div class="record-img">
-          <img
-            src="~/assets/images/main/record-screen.png"
-            alt="record screen"
-          />
-        </div>
-      </b-col>
-      <b-col cols="6">
-        <b-card title="#HeadOuttaSand" class="rounded">
-          <b-card-sub-title class="mb-2">
-            <div class="d-flex align-items-center">
-              <div class="sub-logo mr-2">
-                <img src="~/assets/images/main/subcard-logo.png" alt="logo" />
-              </div>
-              West London Charity
-            </div>
-          </b-card-sub-title>
-          <b-card-text>
-            <a href="#"> #HeadOuttaSand </a>
-            Yourself off its pleasant ecstatic now law. Ye their mirth seems of
-            songs
-          </b-card-text>
-        </b-card>
 
-        <b-button block class="btn-camp btn-red" @click="toNextLevel(2)"
-          >Next</b-button
-        >
+      <b-col cols="12">
+        <b-form @submit="onSubmit" class="row">
+          <b-col cols="6">
+            <b-form-group label="Campaign Name" class="camp-name">
+              <b-form-input
+                v-model="form.name"
+                placeholder="Campaign Name"
+                class=""
+              ></b-form-input>
+            </b-form-group>
+
+            <b-form-group class="camp-logo">
+              <legend>
+                Campaign Logo
+                <span class="optional"> ( Optional ) </span>
+              </legend>
+              <b-form-file
+                v-model="file1"
+                placeholder="Drop files to upload or"
+                class=" "
+              ></b-form-file>
+            </b-form-group>
+
+            <b-form-group  class="camp-photo">
+              <legend>
+                Campaign Logo
+                <span class="optional"> ( Optional ) </span>
+              </legend>
+              <b-form-file
+                v-model="file2"
+                placeholder="Drop files to upload or"
+              ></b-form-file>
+            </b-form-group>
+          </b-col>
+          <b-col cols="6">
+            <b-form-group label="About campaign" class="camp-about">
+              <b-form-textarea
+                placeholder="About campaign"
+                rows="10"
+              ></b-form-textarea>
+            </b-form-group>
+          </b-col>
+
+          <b-col cols="12">
+            <b-button block class="btn-camp btn-red" type="submit"
+              >Next</b-button
+            >
+          </b-col>
+        </b-form>
       </b-col>
     </b-row>
   </section>
 </template>
 
 <script>
-import {mapMutations} from "vuex";
+import { mapMutations } from "vuex";
 export default {
   name: "CampaignDetails",
-  methods :{
-    ...mapMutations({toNextLevel : 'campaign/TO_NEXT'})
+  data() {
+    return {
+      form: {
+        email: "",
+        name: "",
+        food: null,
+        checked: []
+      },
+      foods: [
+        { text: "Select One", value: null },
+        "Carrots",
+        "Beans",
+        "Tomatoes",
+        "Corn"
+      ],
+      show: true,
+      file1: null,
+      file2: null
+    };
+  },
+  methods: {
+    ...mapMutations({ toNextLevel: "campaign/TO_NEXT" }),
+    onSubmit() {
+      //validation
+
+      //done
+      this.toNextLevel(2);
+    }
   }
 };
 </script>

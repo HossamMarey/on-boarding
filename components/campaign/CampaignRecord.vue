@@ -35,8 +35,7 @@
         </b-card>
 
         <b-button block class="btn-camp btn-red" @click="toNextLevel(3)"
-          >Next</b-button
-        >
+          >Next</b-button>
       </b-col>
     </b-row>
   </section>

@@ -15,6 +15,12 @@
     font-size: 1rem;
     margin-top: 1rem;
   }
+  &-success {
+    color: $color-primary;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
 }
 
 .sub-logo {
@@ -48,11 +54,54 @@
 .btn-red {
   background-color: $color-primary;
   border-color: $color-primary;
+  box-shadow: $shadow;
   &:hover,
   &:active,
   &:focus {
     background-color: $color-primary-dark !important;
     border-color: $color-primary-dark !important;
     outline: none;
+    box-shadow: $shadow-md;
+  }
+}
+
+.btn-err {
+  background-color: $color-primary-darker;
+  border-color: $color-primary-darker;
+  box-shadow: $shadow-md;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: darken($color-primary-darker, 5) !important;
+    border-color: darken($color-primary-darker, 5) !important;
+    outline: none;
+    box-shadow: $shadow-lg;
+  }
+}
+
+.btn-green {
+  background-color: $color-green;
+  border-color: $color-green;
+  box-shadow: $shadow-md;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $color-green-dark !important;
+    border-color: $color-green-dark !important;
+    outline: none;
+    box-shadow: $shadow-lg;
+  }
+}
+.btn-blue {
+  background-color: $color-blue;
+  border-color: $color-blue;
+  box-shadow: $shadow-md;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $color-blue-dark !important;
+    border-color: $color-blue-dark !important;
+    outline: none;
+    box-shadow: $shadow-lg;
   }
 }
