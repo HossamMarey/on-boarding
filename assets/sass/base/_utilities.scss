@@ -111,3 +111,7 @@
     box-shadow: $shadow-lg;
   }
 }
+
+.input-error {
+  border-color: $color-error !important;
+}

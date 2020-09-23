@@ -69,10 +69,14 @@
         <div class="email_invite">
           <label for="emails-basic">invite friends by email</label>
           <b-form-tags
+            :class="emailsErr ? 'input-error' : ''"
             input-id="emails-basic"
             v-model="emails"
             placeholder="Add Email"
           ></b-form-tags>
+          <div class="error-text" v-if="emailsErr">
+            {{ emailsErr }}
+          </div>
         </div>
         <b-button block class="btn-camp btn-blue mt-5" @click="invite"
           >Invite</b-button
@@ -90,6 +94,7 @@ export default {
     return {
       shareLink: "http://goo.gl/l6MS",
       emails: [],
+      emailsErr: null,
       copied: false
     };
   },
@@ -111,7 +116,25 @@ export default {
       }
     },
     invite() {
-      console.log(this.emails);
+      // validate emails
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      //
+      let emailsValid = true;
+      this.emails.forEach(email => {
+        if (!re.test(String(email).toLowerCase())) {
+          emailsValid = false;
+        }
+      });
+
+      if (this.emails.length == 0) {
+        this.emailsErr = "Please add emails";
+      } else if (!emailsValid) {
+        this.emailsErr = "Please add a valid emails";
+      } else {
+        this.emails = [];
+        this.emailsErr = null;
+        alert("Emails has been sent");
+      }
     }
   },
   components: {
