@@ -12,7 +12,7 @@
 
       <b-col cols="12">
         <b-form @submit="onSubmit" class="row">
-          <b-col cols="6">
+          <b-col cols="12" md="6">
             <b-form-group label="Campaign Name" class="camp-name">
               <b-form-input
                 v-model="form.name"
@@ -44,7 +44,7 @@
               ></b-form-file>
             </b-form-group>
           </b-col>
-          <b-col cols="6">
+          <b-col cols="12" md="6">
             <b-form-group label="About campaign" class="camp-about">
               <b-form-textarea
                 placeholder="About campaign"

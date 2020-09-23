@@ -40,8 +40,14 @@
 }
 
 .record-img {
-  width: 100%;
-  object-fit: contain;
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  @media (max-width: 576px) {
+    margin-bottom: 3rem;
+  }
 }
 
 .btn-camp {

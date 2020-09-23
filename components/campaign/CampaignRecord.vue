@@ -9,7 +9,7 @@
           </p>
         </div>
       </b-col>
-      <b-col cols="6">
+      <b-col cols="12" md="6">
         <div class="record-img">
           <img
             src="~/assets/images/main/record-screen.png"
@@ -17,7 +17,7 @@
           />
         </div>
       </b-col>
-      <b-col cols="6">
+      <b-col cols="12" md="6">
         <b-card title="#HeadOuttaSand" class="rounded">
           <b-card-sub-title class="mb-2">
             <div class="d-flex align-items-center">

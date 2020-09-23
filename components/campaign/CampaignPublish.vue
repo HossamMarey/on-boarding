@@ -11,7 +11,7 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col cols="6" class="mx-auto">
+      <b-col cols="12" md="6" class="mx-auto">
         <div class="publish_card">
           <div class="publish_card-head">
             <a href="#"> #HeadOuttaSand </a>

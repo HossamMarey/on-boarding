@@ -66,7 +66,11 @@ export default {
   computed: {
     progressWidth() {
       let screenWidth = this.getScreenWidth();
-      return (screenWidth - 730) / 2;
+      if (screenWidth > 1080) {
+        return (screenWidth - 730) / 2;
+      } else {
+        return screenWidth
+      }
     },
     activeCamp() {
       return this.getactiveCamp() || 1;
